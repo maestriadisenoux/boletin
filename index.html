@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONECTA MDUX - Boletín Institucional UNAD</title>
+    <style>
+        /* Estilos Base para Clientes de Correo y Accesibilidad */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #333333;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+        }
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            display: block;
+        }
+        
+        /* Contenedor Principal */
+        .wrapper {
+            width: 100%;
+            table-layout: fixed;
+            background-color: #f4f6f9;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 46, 93, 0.06);
+        }
+
+        /* Encabezado e Identidad Coorporativa */
+        .top-bar {
+            background-color: #ffffff;
+            padding: 15px 30px;
+            border-bottom: 1px solid #eef2f6;
+        }
+        .logo-text-unad {
+            font-size: 22px;
+            font-weight: 800;
+            color: #002E5D; /* Azul Institucional UNAD */
+            letter-spacing: -0.5px;
+        }
+        .logo-text-unad span {
+            color: #F15A24; /* Naranja Institucional UNAD */
+        }
+        .logo-badge-mdux {
+            background-color: #F4F7FA;
+            color: #002E5D;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-left: 3px solid #F15A24;
+            display: inline-block;
+        }
+
+        /* Banner Principal (Hero) */
+        .hero {
+            background: linear-gradient(135deg, #002E5D 0%, #001F42 100%);
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Decoraciones abstractas simulando wireframes/UX */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 200px;
+            height: 200px;
+            border: 2px dashed rgba(241, 90, 36, 0.15);
+            border-radius: 50%;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            width: 80px;
+            height: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+        .pre-title {
+            color: #F15A24;
+            text-transform: uppercase;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+        .main-title {
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: 800;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.5px;
+        }
+        .subtitle {
+            color: #E2E8F0;
+            font-size: 15px;
+            font-weight: 400;
+            max-width: 480px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        /* Bloques de Contenido */
+        .content-padding {
+            padding: 40px 40px 20px 40px;
+        }
+        
+        /* Mensaje de Bienvenida */
+        .welcome-section {
+            margin-bottom: 35px;
+        }
+        .welcome-section p {
+            font-size: 15px;
+            color: #4A5568;
+            margin: 0;
+            text-align: justify;
+        }
+
+        /* Tarjeta Informativa (Cápsula PEP) */
+        .card-pep {
+            background-color: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 35px;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+        }
+        .card-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #002E5D;
+            margin-top: 0;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .card-text {
+            font-size: 14px;
+            color: #4A5568;
+            margin: 0;
+        }
+
+        /* Sección Ruta Académica */
+        .ruta-section {
+            background-color: #EDF2F7;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+        .ruta-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #002E5D;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .ruta-text {
+            font-size: 14px;
+            color: #4A5568;
+            margin-bottom: 20px;
+        }
+        .btn-unad {
+            display: inline-block;
+            background-color: #F15A24;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            transition: background-color 0.2s ease;
+            box-shadow: 0 4px 10px rgba(241, 90, 36, 0.25);
+        }
+        
+        /* Sección Actualizaciones y Cuadrícula */
+        .section-heading {
+            font-size: 18px;
+            font-weight: 700;
+            color: #002E5D;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-left: 4px solid #F15A24;
+            padding-left: 12px;
+        }
+        .grid-container {
+            margin-bottom: 25px;
+        }
+        .grid-row {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+            margin-bottom: 15px;
+        }
+        .grid-item {
+            display: table-cell;
+            width: 50%;
+            padding: 0 8px;
+            vertical-align: top;
+        }
+        .grid-item:first-child {
+            padding-left: 0;
+        }
+        .grid-item:last-child {
+            padding-right: 0;
+        }
+        .mini-card {
+            background-color: #ffffff;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            padding: 16px;
+            height: 100%;
+            box-shadow: 0 2px 6px rgba(0, 46, 93, 0.02);
+        }
+        .mini-card-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #002E5D;
+            margin: 0 0 6px 0;
+        }
+        .mini-card-desc {
+            font-size: 12px;
+            color: #718096;
+            margin: 0;
+        }
+
+        /* Sección Sabías Que */
+        .sabias-que {
+            background-color: #FFFAF0;
+            border: 1px dashed #FEEBC8;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 35px;
+        }
+        
+        /* Sección Participación */
+        .participacion-section {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 0 10px;
+        }
+        .participacion-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #002E5D;
+            margin-bottom: 8px;
+        }
+        .participacion-text {
+            font-size: 14px;
+            color: #4A5568;
+            margin: 0;
+        }
+
+        /* Pie de Página Institucional */
+        .footer {
+            background-color: #001F42;
+            color: #A0AEC0;
+            padding: 40px 40px;
+            text-align: center;
+            font-size: 12px;
+            border-top: 3px solid #F15A24;
+        }
+        .footer-brand {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .footer-sub {
+            color: #E2E8F0;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .footer-meta {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .footer-links a {
+            color: #F15A24;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 8px;
+        }
+        .footer-social {
+            margin-top: 15px;
+            font-size: 11px;
+            color: #718096;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 600px) {
+            .content-padding {
+                padding: 30px 20px 15px 20px;
+            }
+            .hero {
+                padding: 40px 20px;
+            }
+            .main-title {
+                font-size: 26px;
+            }
+            .grid-item {
+                display: block;
+                width: 100%;
+                padding: 0;
+                margin-bottom: 12px;
+            }
+            .grid-row {
+                margin-bottom: 0;
+            }
+            .footer {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+            
+            <!-- Encabezado Institucional -->
+            <table class="top-bar">
+                <tr>
+                    <td class="logo-text-unad">UNAD<span>.</span></td>
+                    <td align="right">
+                        <div class="logo-badge-mdux">MAESTRÍA MDUX</div>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Banner Principal (Hero UX/UI) -->
+            <div class="hero">
+                <div class="pre-title">Boletín Informativo</div>
+                <h1 class="main-title">✨ CONECTA MDUX</h1>
+                <p class="subtitle">“Conoce, participa y apropia el Proyecto Educativo del Programa”</p>
+            </div>
+
+            <!-- Cuerpo del Boletín -->
+            <div class="content-padding">
+                
+                <!-- Sección de Bienvenida -->
+                <div class="welcome-section">
+                    <p>Bienvenidos al boletín institucional de la Maestría en Experiencia de Usuario y Diseño Centrado en el Usuario – MDUX. Este espacio busca fortalecer el conocimiento y apropiación del Proyecto Educativo del Programa (PEP), compartiendo información relevante sobre identidad académica, rutas formativas y procesos de calidad.</p>
+                </div>
+
+                <!-- Cápsula Informativa (Tarjeta PEP) -->
+                <div class="card-pep">
+                    <h2 class="card-title">📘 ¿Qué es el PEP?</h2>
+                    <p class="card-text">El Proyecto Educativo del Programa orienta la identidad académica y formativa de la MDUX, definiendo competencias, perfil del egresado, estrategias pedagógicas y componentes curriculares.</p>
+                </div>
+
+                <!-- Ruta Académica -->
+                <div class="ruta-section">
+                    <h2 class="ruta-title">🧭 Tu ruta de formación</h2>
+                    <p class="ruta-text">Consulta la organización curricular, componentes formativos y recursos académicos del programa.</p>
+                    <a href="#" class="btn-unad">Consultar información académica</a>
+                </div>
+
+                <!-- Actualizaciones del Programa -->
+                <h2 class="section-heading">🚀 Actualizaciones MDUX</h2>
+                
+                <div class="grid-container">
+                    <!-- Fila 1 -->
+                    <div class="grid-row">
+                        <div class="grid-item">
+                            <div class="mini-card">
+                                <h3 class="mini-card-title">📅 Eventos académicos</h3>
+                                <p class="mini-card-desc">Espacios de encuentro, webinars y seminarios especializados sobre tendencias UX.</p>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="mini-card">
+                                <h3 class="mini-card-title">📣 Convocatorias</h3>
+                                <p class="mini-card-desc">Participa activamente en los procesos de selección académica y proyectos especiales.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fila 2 -->
+                    <div class="grid-row">
+                        <div class="grid-item">
+                            <div class="mini-card">
+                                <h3 class="mini-card-title">🔬 Investigación</h3>
+                                <p class="mini-card-desc">Producción de conocimiento, semilleros y líneas de acción en diseño centrado en el usuario.</p>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="mini-card">
+                                <h3 class="mini-card-title">✅ Procesos de calidad</h3>
+                                <p class="mini-card-desc">Seguimiento de autoevaluación, acreditación y mejora continua de la maestría.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fila 3 -->
+                    <div class="grid-row">
+                        <div class="grid-item" style="width:100%;">
+                            <div class="mini-card">
+                                <h3 class="mini-card-title">⚡ Innovación digital</h3>
+                                <p class="mini-card-desc">Transformación de entornos virtuales de aprendizaje y herramientas tecnológicas de vanguardia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pregunta Rápida -->
+                <div class="sabias-que">
+                    <h2 class="card-title" style="color: #c05621;">❓ ¿Sabías que…?</h2>
+                    <p class="card-text" style="color: #744210;">El perfil del egresado MDUX integra competencias en experiencia de usuario, accesibilidad, innovación y transformación digital.</p>
+                </div>
+
+                <!-- Participación -->
+                <div class="participacion-section">
+                    <h2 class="participacion-title">💬 Tu participación fortalece la calidad</h2>
+                    <p class="participacion-text">Te invitamos a consultar los recursos institucionales y participar activamente en los procesos académicos y de fortalecimiento de la calidad del programa.</p>
+                </div>
+
+            </div>
+
+            <!-- Footer Institucional -->
+            <div class="footer">
+                <div class="footer-brand">Coordinación MDUX</div>
+                <div class="footer-sub">Escuela de Ciencias Básicas, Tecnología e Ingeniería (ECBTI)</div>
+                
+                <div class="footer-meta">
+                    Universidad Nacional Abierta y a Distancia – UNAD<br>
+                    Sede Nacional José Celestino Mutis • Bogotá, D.C., Colombia
+                </div>
+                
+                <div class="footer-links">
+                    <a href="mailto:mdux@unad.edu.co">mdux@unad.edu.co</a> | 
+                    <a href="https://www.unad.edu.co" target="_blank">www.unad.edu.co</a>
+                </div>
+                
+                <div class="footer-social">
+                    Síguenos en redes institucionales: @UniversidadUNAD
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
+boletin_conecta_mdux.html
+Mostrando boletin_conecta_mdux.html.
